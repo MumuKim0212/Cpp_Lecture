@@ -1,9 +1,10 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include <iostream>
 #include "ConsoleHelper.h"
 #include "Board.h"
 #include "Player.h"
-
+// 1. 맵 설정, 플레이어 배치
+// 2. 
 Board board;
 Player player;
 

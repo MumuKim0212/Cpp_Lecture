@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Maze.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|solutionrelative:Maze\\Maze.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Board.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|solutionrelative:Maze\\Board.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|solutionrelative:Maze\\Board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|solutionrelative:Maze\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|solutionrelative:Maze\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Maze.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|solutionrelative:Maze\\Maze.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|solutionrelative:Maze\\Types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Board.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|solutionrelative:Maze\\Board.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\ConsoleHelper.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -35,8 +35,8 @@
       "RelativeMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|solutionrelative:Maze\\ConsoleHelper.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|solutionrelative:Maze\\Types.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{13437CD2-C333-4962-B0A6-3FC43B7AAB90}|Maze\\Maze.vcxproj|solutionrelative:Maze\\Board.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7D8ECEBD-E644-4B11-BE4A-46AABA6DB852}|Algorithm\\Algorithm.vcxproj|C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Algorithm\\Algorithm.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -50,32 +50,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 181,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Player.h",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Player.h",
-              "RelativeDocumentMoniker": "Maze\\Player.h",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Player.h",
-              "RelativeToolTip": "Maze\\Player.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-26T02:46:33.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Board.h",
               "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Board.h",
               "RelativeDocumentMoniker": "Maze\\Board.h",
               "ToolTip": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Board.h",
               "RelativeToolTip": "Maze\\Board.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAnAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-07-26T01:58:15.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Types.h",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Types.h",
+              "RelativeDocumentMoniker": "Maze\\Types.h",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Types.h",
+              "RelativeToolTip": "Maze\\Types.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-24T05:06:20.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Player.h",
+              "RelativeDocumentMoniker": "Maze\\Player.h",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Player.h",
+              "RelativeToolTip": "Maze\\Player.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-07-26T02:46:33.46Z",
               "EditorCaption": ""
             },
             {
@@ -106,18 +119,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Types.h",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Types.h",
-              "RelativeDocumentMoniker": "Maze\\Types.h",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Types.h",
-              "RelativeToolTip": "Maze\\Types.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-07-24T05:06:20.502Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Algorithm.cpp",
               "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Algorithm\\Algorithm.cpp",
@@ -136,41 +137,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Player.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Player.cpp",
-              "RelativeDocumentMoniker": "Maze\\Player.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Player.cpp",
-              "RelativeToolTip": "Maze\\Player.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-26T02:46:35.006Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Board.cpp",
               "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Board.cpp",
               "RelativeDocumentMoniker": "Maze\\Board.cpp",
               "ToolTip": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Board.cpp",
               "RelativeToolTip": "Maze\\Board.cpp",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAowGgAAAAZAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAowGgAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-26T01:58:19.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Maze.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Maze.cpp",
-              "RelativeDocumentMoniker": "Maze\\Maze.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Maze.cpp",
-              "RelativeToolTip": "Maze\\Maze.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-07-22T07:07:07.893Z",
               "EditorCaption": ""
             },
             {
@@ -181,9 +156,35 @@
               "RelativeDocumentMoniker": "Maze\\ConsoleHelper.cpp",
               "ToolTip": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\ConsoleHelper.cpp",
               "RelativeToolTip": "Maze\\ConsoleHelper.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-07-22T06:08:26.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Player.cpp",
+              "RelativeDocumentMoniker": "Maze\\Player.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Player.cpp",
+              "RelativeToolTip": "Maze\\Player.cpp",
+              "ViewState": "AQIAADgAAAAAAAAAAAAcwEoAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-26T02:46:35.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Maze.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Maze.cpp",
+              "RelativeDocumentMoniker": "Maze\\Maze.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\GitHub\\Cpp_Lecture\\Algorithm\\Maze\\Maze.cpp",
+              "RelativeToolTip": "Maze\\Maze.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-07-22T07:07:07.893Z",
               "EditorCaption": ""
             }
           ]

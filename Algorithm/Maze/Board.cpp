@@ -1,9 +1,9 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include "Board.h"
 #include "ConsoleHelper.h"
 #include "Player.h"
 
-const char* TILE = "¡á";
+const char* TILE = "â– ";
 
 Board::Board()
 {
@@ -39,7 +39,7 @@ void Board::Render()
 	}
 
 }
-// Bibary tree ¹Ì·Î »ı¼º ¾Ë°í¸®Áò
+// Bibary tree ë¯¸ë¡œ ìƒì„± ì•Œê³ ë¦¬ì¦˜
 //  - Mazes for Programmers
 void Board::GenerateMap()
 {
@@ -47,7 +47,7 @@ void Board::GenerateMap()
 	{
 		for (int32 x = 0; x < _size; x++)
 		{
-			// ±³Â÷Á¡À» ¹èÄ¡ ÈÄ ¿À¸¥ÂÊ È¤Àº ¾Æ·¡ÂÊ Å¸ÀÏÀ» ·£´ıÀ¸·Î Á¦°Å
+			// êµì°¨ì ì„ ë°°ì¹˜ í›„ ì˜¤ë¥¸ìª½ í˜¹ì€ ì•„ë˜ìª½ íƒ€ì¼ì„ ëœë¤ìœ¼ë¡œ ì œê±°
 			if (x % 2 == 0 || y % 2 == 0)
 				_tile[y][x] = TileType::WALL;
 			else
@@ -55,7 +55,7 @@ void Board::GenerateMap()
 		}
 	}
 
-	// ·£´ıÀ¸·Î ¿ìÃø È¤Àº ¾Æ·¡·Î ±æÀ» ¶Õ´Â ÀÛ¾÷
+	// ëœë¤ìœ¼ë¡œ ìš°ì¸¡ í˜¹ì€ ì•„ë˜ë¡œ ê¸¸ì„ ëš«ëŠ” ì‘ì—…
 	for (int32 y = 0; y < _size; y++)
 	{
 		for (int32 x = 0; x < _size; x++)
