@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <windows.h>
 #include "BinarySearchTree.h"
 using namespace std;
@@ -29,15 +29,15 @@ void BinarySearchTree::Print(Node* node, int x, int y)
 
 void BinarySearchTree::Print_Inorder(Node* node)
 {
-    // ÀüÀ§ ¼øÈ¸ (preorder traverse)
-    // ÁßÀ§ ¼øÈ¸ (inorder)
-    // ÈÄÀ§ ¼øÈ¸ (postorder)
+    // ì „ìœ„ ìˆœíšŒ (preorder traverse)
+    // ì¤‘ìœ„ ìˆœíšŒ (inorder)
+    // í›„ìœ„ ìˆœíšŒ (postorder)
     if (node == nullptr)
         return;
 
-    // ÀüÀ§ : [Áß]ÀÌ ¾Õ¿¡ ¿Â´Ù
-    // ÁßÀ§ : [Áß]ÀÌ Áß°£¿¡ ¿Â´Ù
-    // ÈÄÀ§ : [Áß]ÀÌ ¸¶Áö¸·¿¡ ¿Â´Ù	
+    // ì „ìœ„ : [ì¤‘]ì´ ì•ì— ì˜¨ë‹¤
+    // ì¤‘ìœ„ : [ì¤‘]ì´ ì¤‘ê°„ì— ì˜¨ë‹¤
+    // í›„ìœ„ : [ì¤‘]ì´ ë§ˆì§€ë§‰ì— ì˜¨ë‹¤	
     cout << node->key << endl;
     Print_Inorder(node->left);
     Print_Inorder(node->right);
@@ -147,15 +147,15 @@ void BinarySearchTree::Delete(Node* node)
         Replace(node, node->left);
     else
     {
-        // ´ÙÀ½ µ¥ÀÌÅÍ Ã£±â
+        // ë‹¤ìŒ ë°ì´í„° ì°¾ê¸°
         Node* next = Next(node);
         node->key = next->key;
         Delete(next);
     }
 }
 
-// u ¼­ºêÆ®¸®¸¦ v ¼­ºêÆ®¸®·Î ±³Ã¼
-// ±×¸®°í delete u
+// u ì„œë¸ŒíŠ¸ë¦¬ë¥¼ v ì„œë¸ŒíŠ¸ë¦¬ë¡œ êµì²´
+// ê·¸ë¦¬ê³  delete u
 void BinarySearchTree::Replace(Node* u, Node* v)
 {
     if (u->parent == nullptr)

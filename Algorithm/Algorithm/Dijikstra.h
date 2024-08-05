@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <iostream>
 using namespace std;
 
@@ -8,7 +8,7 @@ struct Vertex
 };
 
 vector<Vertex> vertices;
-vector<vector<int>> adjacent; // ÀÎÁ¢Çà·Ä
+vector<vector<int>> adjacent; // ì¸ì ‘í–‰ë ¬
 
 void CreateGraph()
 {
@@ -23,7 +23,7 @@ void CreateGraph()
 	adjacent[3][4] = 5;
 	adjacent[5][4] = 5;
 }
-// Á¤ÇØÁø ¸ñÇ¥ÁöÁ¡ ¾øÀÌ °¡Àå °¡±î¿î Á¤Á¡µéÀ» ¹æ¹® 
+// ì •í•´ì§„ ëª©í‘œì§€ì  ì—†ì´ ê°€ì¥ ê°€ê¹Œìš´ ì •ì ë“¤ì„ ë°©ë¬¸ 
 void Dijikstra(int here)
 {
 	struct VertexCost
@@ -32,8 +32,8 @@ void Dijikstra(int here)
 		int cost;
 	};
 
-	list<VertexCost> discovered; // ¹ß°ß ¸ñ·Ï
-	vector<int> best(6, INT32_MAX); // °¢ Á¤Á¡º°·Î Áö±İ±îÁö ¹ß°ßÇÑ ÃÖ¼Ò °Å¸®
+	list<VertexCost> discovered; // ë°œê²¬ ëª©ë¡
+	vector<int> best(6, INT32_MAX); // ê° ì •ì ë³„ë¡œ ì§€ê¸ˆê¹Œì§€ ë°œê²¬í•œ ìµœì†Œ ê±°ë¦¬
 	vector<int> parent(6, -1);
 
 	discovered.push_back(VertexCost{ here, 0 });
@@ -42,7 +42,7 @@ void Dijikstra(int here)
 
 	while (discovered.empty() == false)
 	{
-		// Á¦ÀÏ ÁÁÀº ÈÄº¸¸¦ Ã£´Â´Ù.
+		// ì œì¼ ì¢‹ì€ í›„ë³´ë¥¼ ì°¾ëŠ”ë‹¤.
 		list<VertexCost>::iterator bestIt;
 		int bestCost = INT32_MAX;
 
@@ -61,19 +61,19 @@ void Dijikstra(int here)
 		here = bestIt->vertex;
 		discovered.erase(bestIt);
 
-		// ¹æ¹® Àü ´õ ÂªÀº °æ·Î¸¦ µÚ´Ê°Ô Ã£¾Ò´Ù¸é ½ºÅµ
+		// ë°©ë¬¸ ì „ ë” ì§§ì€ ê²½ë¡œë¥¼ ë’¤ëŠ¦ê²Œ ì°¾ì•˜ë‹¤ë©´ ìŠ¤í‚µ
 		if (best[here] < cost)
 			continue;
 
-		// ¹æ¹®
+		// ë°©ë¬¸
 		for (int there = 0; there < 6; there++)
 		{
-			// ¿¬°áµÇÁö ¾Ê¾ÒÀ¸¸é ½ºÅµ
+			// ì—°ê²°ë˜ì§€ ì•Šì•˜ìœ¼ë©´ ìŠ¤í‚µ
 			if (adjacent[here][there] == -1)
 				continue;
 
-			// ºñ¿ë°è»ê
-			// ´õ ÁÁÀº °æ·Î¸¦ °ú°Å¿¡ Ã£¾ÒÀ¸¸é ½ºÅµ
+			// ë¹„ìš©ê³„ì‚°
+			// ë” ì¢‹ì€ ê²½ë¡œë¥¼ ê³¼ê±°ì— ì°¾ì•˜ìœ¼ë©´ ìŠ¤í‚µ
 			int nextCost = best[here] + adjacent[here][there];
 			if (nextCost >= best[there])
 				continue;
