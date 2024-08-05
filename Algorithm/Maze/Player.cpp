@@ -1,4 +1,4 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include "Player.h"
 #include "Board.h"
 #include <stack>
@@ -8,15 +8,19 @@ void Player::Init(Board* board)
 	_pos = board->GetEnterPos();
 	_board = board;
 
-	//RightHand();
-	Bfs();
+	//RightHand(); // ìš°ì¸¡ë²½ ë”°ë¼ê°€ê¸°
+	//Bfs(); // ë„ˆë¹„ ìš°ì„  íƒìƒ‰
+	AStar(); // A* ì•Œê³ ë¦¬ì¦˜
 }
 
 void Player::Update(uint64 deltaTick)
 {
-	if (_pathIndex >= _path.size())
-		return;
-
+    if (_pathIndex >= _path.size())
+    {
+        _board->GenerateMap();
+        Init(_board);
+        return;
+    }
 	_sumTick += deltaTick;
 	if (_sumTick >= MOVE_TICK)
 	{
@@ -40,7 +44,7 @@ void Player::RightHand()
 	_path.clear();
 	_path.push_back(pos);
 
-	// ¸ñÀûÁö µµÂøÇÏ±â Àü¿¡´Â °è¼Ó ½ÇÇà
+	// ëª©ì ì§€ ë„ì°©í•˜ê¸° ì „ì—ëŠ” ê³„ì† ì‹¤í–‰
 	Pos dest = _board->GetExitPos();
 
 	Pos front[4] =
@@ -53,29 +57,29 @@ void Player::RightHand()
 
 	while (pos != dest)
 	{
-		// 1. ÇöÀç ¹Ù¶óº¸´Â ¹æÇâÀ» ±âÁØÀ¸·Î ¿À¸¥ÂÊÀ¸·Î °¥ ¼ö ÀÖ´ÂÁö Ã¼Å©
+		// 1. í˜„ì¬ ë°”ë¼ë³´ëŠ” ë°©í–¥ì„ ê¸°ì¤€ìœ¼ë¡œ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ê°ˆ ìˆ˜ ìˆëŠ”ì§€ ì²´í¬
 		int32 newDir = (_dir - 1 + DIR_COUNT) % DIR_COUNT;
 		if (CanGo(pos + front[newDir]))
 		{
-			// ¿À¸¥ÂÊ ¹æÇâÀ¸·Î 90µµ È¸Àü
+			// ì˜¤ë¥¸ìª½ ë°©í–¥ìœ¼ë¡œ 90ë„ íšŒì „
 			_dir = newDir;
-			// ¾ÕÀ¸·Î ÇÑº¸ ÀüÁø
+			// ì•ìœ¼ë¡œ í•œë³´ ì „ì§„
 			pos += front[_dir];
 
 			_path.push_back(pos);
 
 		}
-		// 2. ÇöÀç ¹Ù¶óº¸´Â ¹æÇâÀ» ±âÁØÀ¸·Î ÀüÁøÇÒ ¼ö ÀÖ´ÂÁö Ã¼Å©
+		// 2. í˜„ì¬ ë°”ë¼ë³´ëŠ” ë°©í–¥ì„ ê¸°ì¤€ìœ¼ë¡œ ì „ì§„í•  ìˆ˜ ìˆëŠ”ì§€ ì²´í¬
 		else if (CanGo(pos + front[_dir]))
 		{
-			// ¾ÕÀ¸·Î ÇÑº¸ ÀüÁø
+			// ì•ìœ¼ë¡œ í•œë³´ ì „ì§„
 			pos += front[_dir];
 
 			_path.push_back(pos);
 		}
 		else
 		{
-			// ¿ŞÂÊ ¹æÇâÀ¸·Î 90µµ È¸Àü
+			// ì™¼ìª½ ë°©í–¥ìœ¼ë¡œ 90ë„ íšŒì „
 			_dir = (_dir + 1) % DIR_COUNT;
 			/*
 			switch (_dir)
@@ -101,15 +105,15 @@ void Player::RightHand()
 
 	for (int i = 0; i < _path.size() - 1; i++)
 	{
-		// µÇµ¹¾Æ°¡´ÂÁß
+		// ë˜ëŒì•„ê°€ëŠ”ì¤‘
 		if (s.empty() == false && s.top() == _path[i + 1])
 			s.pop();
-		// Á¤»óÁøÇàÁß
+		// ì •ìƒì§„í–‰ì¤‘
 		else
 			s.push(_path[i]);
 	}
 
-	// ¸ñÀûÁö µµÂø
+	// ëª©ì ì§€ ë„ì°©
 	if (_path.empty() == false)
 		s.push(_path.back());
 
@@ -128,25 +132,25 @@ void Player::Bfs()
 {
 	Pos pos = _pos;
 
-	// ¸ñÀûÁö µµÂøÇÏ±â Àü¿¡´Â °è¼Ó ½ÇÇà
+	// ëª©ì ì§€ ë„ì°©í•˜ê¸° ì „ì—ëŠ” ê³„ì† ì‹¤í–‰
 	Pos dest = _board->GetExitPos();
 
 	Pos front[4] =
 	{
 		Pos {-1, 0},	// UP
 		Pos {0, -1},	// LEFT
-		Pos {1, 0},	// DOWN
-		Pos {0, 1},	// RIGHT
+		Pos {1, 0},		// DOWN
+		Pos {0, 1},		// RIGHT
 	};
 
-	// ¹ß°ßÇß´ÂÁö ¿©ºÎ ÃßÀû
+	// ë°œê²¬í–ˆëŠ”ì§€ ì—¬ë¶€ ì¶”ì 
 	const int32 size = _board->GetSize();
 	vector<vector<bool>> discovered(size, vector<bool>(size, false));
 
-	// vector¸¦ ÀÌ¿ëÇÑ ¹æ¹ı
+	// vectorë¥¼ ì´ìš©í•œ ë°©ë²•
 	//vector<vector<Pos>> parent;
-	// mapÀ» ÀÌ¿ëÇÑ ¹æ¹ı
-	// parent[A] = B -> A´Â B·Î ÀÎÇØ ¹ß°ßÇÔ;
+	// mapì„ ì´ìš©í•œ ë°©ë²•
+	// parent[A] = B -> AëŠ” Bë¡œ ì¸í•´ ë°œê²¬í•¨;
 	map<Pos, Pos> parent;
 
 	queue<Pos> q;
@@ -159,18 +163,18 @@ void Player::Bfs()
 		pos = q.front();
 		q.pop();
 
-		// ¹æ¹®
-		// µµÂøÇß´Ù¸é
+		// ë°©ë¬¸
+		// ë„ì°©í–ˆë‹¤ë©´
 		if (pos == dest)
 			break;
-		// µµÂøÇÏÁö ¾Ê¾ÒÀ¸¸é
+		// ë„ì°©í•˜ì§€ ì•Šì•˜ìœ¼ë©´
 		for (int32 dir = 0; dir < 4; dir++)
 		{
 			Pos nextPos = pos + front[dir];
-			// °¥ ¼ö ÀÖ´Â Áö¿ªÀÎÁö È®ÀÎ
+			// ê°ˆ ìˆ˜ ìˆëŠ” ì§€ì—­ì¸ì§€ í™•ì¸
 			if (CanGo(nextPos) == false)
 				continue;
-			// ÀÌ¹Ì ¹ß°ßÇÑ Áö¿ªÀÎÁö È®ÀÎ
+			// ì´ë¯¸ ë°œê²¬í•œ ì§€ì—­ì¸ì§€ í™•ì¸
 			if (discovered[nextPos.y][nextPos.x])
 				continue;
 
@@ -182,14 +186,14 @@ void Player::Bfs()
 
 	_path.clear();
 
-	// °Å²Ù·Î °Å½½·¯ ¿Ã¶ó°£´Ù.
+	// ê±°ê¾¸ë¡œ ê±°ìŠ¬ëŸ¬ ì˜¬ë¼ê°„ë‹¤.
 	pos = dest;
 
 	while (true)
 	{
 		_path.push_back(pos);
 
-		// ½ÃÀÛÁ¡Àº ÀÚ±âÀÚ½ÅÀÌ ºÎ¸ğÀÌ´Ù
+		// ì‹œì‘ì ì€ ìê¸°ìì‹ ì´ ë¶€ëª¨ì´ë‹¤
 		if (pos == parent[pos])
 			break;
 
@@ -197,3 +201,148 @@ void Player::Bfs()
 	}
 	std::reverse(_path.begin(), _path.end());
 }
+
+struct PQNode
+{
+    bool operator<(const PQNode& other) const { return f < other.f; }
+    bool operator>(const PQNode& other) const { return f > other.f; }
+
+    int32   f; // f = g + h
+    int32   g;
+    Pos     pos;
+};
+
+void Player::AStar()
+{
+	// ì ìˆ˜ ë©”ê¸°ê¸°
+	// F = G + H
+	// F: ì‹œì‘ì ì—ì„œ ëª©ì ì§€ê¹Œì§€ì˜ ì˜ˆìƒ ë¹„ìš©. ì‘ì„ìˆ˜ë¡ ì¢‹ìŒ
+	// G: ì‹œì‘ì ì—ì„œ í•´ë‹¹ ì¢Œí‘œê¹Œì§€ì˜ ë¹„ìš©
+	// H: ëª©ì ì§€ê¹Œì§€ì˜ ì˜ˆìƒ ë¹„ìš©. ê³ ì •ê°’
+
+	Pos start = _pos;
+
+	// ëª©ì ì§€ ë„ì°©í•˜ê¸° ì „ì—ëŠ” ê³„ì† ì‹¤í–‰
+	Pos dest = _board->GetExitPos();
+
+    enum
+    {
+        DIR_COUNT = 4
+    };
+
+	Pos front[] =
+	{
+		Pos {-1, 0},	// UP
+		Pos {0, -1},	// LEFT
+		Pos {1, 0},		// DOWN
+		Pos {0, 1},		// RIGHT
+        Pos {-1, -1},	// UP LEFT
+        Pos {1, -1},	// DOWN LEFT
+        Pos {1, 1},		// DOWN RIGHT
+        Pos {-1, 1}		// UP RIGHT
+	};
+
+    int32 cost[] = 
+    {
+        // 1.4ë¥¼ ì •ìˆ˜ë¡œ ê´€ë¦¬í•˜ê¸° ìœ„í•´ 10ì„ ê³±í•´ì„œ ê´€ë¦¬
+        10, // UP
+        10, // LEFT
+        10, // DOWN
+        10, // RIGHT
+        14, // UP LEFT
+        14, // DOWN LEFT
+        14, // DOWN RIGHT
+        14  // UP RIGHT
+    };
+
+    const int32 size = _board->GetSize();
+
+    // Closed List: closed[y][x] = true -> ì´ë¯¸ ë°©ë¬¸í•œ ê³³
+    vector<vector<bool>> closed(size, vector<bool>(size, false));
+
+    // best[y][x] = ì‹œì‘ì ì—ì„œ í•´ë‹¹ ì¢Œí‘œê¹Œì§€ì˜ ìµœì†Œ ë¹„ìš©
+    vector<vector<int32>> best(size, vector<int32>(size, INT32_MAX));
+
+    // ë¶€ëª¨ ì¶”ì  ìš©ë„
+    map<Pos, Pos> parent;
+
+    // OpenList: ìš°ì„ ìˆœìœ„ í
+    priority_queue<PQNode, vector<PQNode>, greater<PQNode>> pq;
+
+    // 1) ì˜ˆì•½(ë°œê²¬)ì‹œìŠ¤í…œ êµ¬í˜„
+    //  - í•œ ì •ì ì— ì—°ê²°ë˜ì–´ìˆëŠ” ì •ì ë“¤ì„ ë°œê²¬í•´ costë¥¼ ê³„ì‚°í•˜ê³ , ì˜ˆì•½
+    // 2) ë’¤ëŠ¦ê²Œ ë” ì¢‹ì€ ê²½ë¡œê°€ ë°œê²¬ë  ìˆ˜ ìˆìŒ -> ì˜ˆì™¸ì²˜ë¦¬ í•„ìš”
+
+	// ì´ˆê¸°ê°’
+    {
+        int32 g = 0;
+        int32 h = 10 * (abs(dest.y - start.y) + abs(dest.x - start.x));
+        pq.push(PQNode{g + h, g, start});
+        best[start.y][start.x] = g + h;
+        parent[start] = start;
+    }
+
+    while (pq.empty() == false)
+    {
+        // ì œì¼ ì¢‹ì€ í›„ë³´ë¥¼ ì°¾ëŠ”ë‹¤
+        PQNode node = pq.top();
+        pq.pop();
+
+        // ë™ì¼í•œ ì¢Œí‘œë¥¼ ì—¬ëŸ¬ ê²½ë¡œë¡œ ì°¾ì•„ì„œ ë” ë¹ ë¥¸ ê²½ë¡œë¡œ ì¸í•´ ì´ë¯¸ ë°©ë¬¸ëœê²½ìš° skip
+        
+        // [ì„ íƒ]
+        if (closed[node.pos.y][node.pos.x])
+            continue;
+        if (best[node.pos.y][node.pos.x] < node.f)
+            continue;
+
+        // ë°©ë¬¸
+        closed[node.pos.y][node.pos.x] = true;
+
+        // ëª©ì ì§€ì— ë„ì°©í–ˆìœ¼ë©´ ì¢…ë£Œ
+        if (node.pos == dest)
+            break;
+
+        for (int32 dir = 0; dir < DIR_COUNT; dir++)
+        {
+            Pos nextPos = node.pos + front[dir];
+            // ê°ˆ ìˆ˜ ìˆëŠ” ì§€ì—­ì¸ì§€ í™•ì¸
+            if (CanGo(nextPos) == false)
+                continue;
+            // [ì„ íƒ] ì´ë¯¸ ë°©ë¬¸í•œ ê³³ì´ë©´ skip
+            if (closed[nextPos.y][nextPos.x])
+                continue;
+
+            // ë¹„ìš© ê³„ì‚°
+            int32 g = node.g + cost[dir];
+            int32 h = 10 * (abs(dest.y - nextPos.y) + abs(dest.x - nextPos.x));
+            // ë‹¤ë¥¸ ê²½ë¡œì—ì„œ ë” ë¹ ë¥¸ ê¸¸ì„ ì°¾ì•˜ìœ¼ë©´ skip
+            if (best[nextPos.y][nextPos.x] <= g + h)
+                continue;
+
+            // ì˜ˆì•½ ì§„í–‰
+            best[nextPos.y][nextPos.x] = g + h;
+            pq.push(PQNode{ g + h, g, nextPos });
+            parent[nextPos] = node.pos;
+        }
+    }
+
+    Pos pos = dest;
+
+    // ê±°ê¾¸ë¡œ ê±°ìŠ¬ëŸ¬ ì˜¬ë¼ê°„ë‹¤.
+    _path.clear();
+    _pathIndex = 0;
+          
+    while (true)
+    {
+        _path.push_back(pos);
+
+        // ì‹œì‘ì ì€ ìê¸°ìì‹ ì´ ë¶€ëª¨ì´ë‹¤
+        if (pos == parent[pos])
+            break;
+
+        pos = parent[pos];
+    }
+    std::reverse(_path.begin(), _path.end());
+}
+
